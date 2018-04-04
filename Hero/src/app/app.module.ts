@@ -11,6 +11,10 @@ import { MessageServiceService } from './message-service.service';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
+
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -21,9 +25,14 @@ import { FormsModule } from '@angular/forms';
     MessagesComponent
   ],
   imports: [
+ 
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [HeroServiceService, MessageServiceService],
   bootstrap: [AppComponent]
