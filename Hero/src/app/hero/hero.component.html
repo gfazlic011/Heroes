@@ -1,0 +1,6 @@
+<a routerLink="/main">Main Page</a>
+<ul>
+  <li *ngFor="let hero of heroes"><a routerLink="/hero/detailes/{{hero.id}}">
+    {{hero.name}}</a>  
+  </li>
+</ul>
