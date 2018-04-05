@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
 import { HeroComponent } from './hero/hero.component';
-import { RouterModule,Routes } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 import { HeroDetailesComponent } from './hero-detailes/hero-detailes.component';
 import { HeroMainPageComponent } from './hero-main-page/hero-main-page.component';
 
 
-const routes:Routes = [
+const routes: Routes = [
   {
-    path:'heroes',
-    component:HeroComponent
+    path: 'heroes',
+    component: HeroComponent
   },
   {
-    path:'hero/detailes/:id',
-    component:HeroDetailesComponent
+    path: 'hero/detailes/:id',
+    component: HeroDetailesComponent
   },
   {
-    path:'main',
-    component:HeroMainPageComponent
+    path: 'main',
+    component: HeroMainPageComponent
   },
   {
-    path:'',
-    redirectTo:'main',
-    pathMatch:'full'
+    path: '',
+    redirectTo: 'main',
+    pathMatch: 'full'
   }
 ];
 
@@ -29,7 +29,7 @@ const routes:Routes = [
 
 
   imports: [RouterModule.forRoot(routes)],
-  exports:[RouterModule],
+  exports: [RouterModule],
   declarations: []
 })
 export class AppRoutingModule { }
